@@ -10,8 +10,9 @@ public class NotificacaoService {
     private final SmsService smsService;
     private final PushService pushService;
 
-    public NotificacaoService(EmailService emailService, SmsService smsService, PushService pushService) {
-        this.emailService = emailService;
+    public NotificacaoService(SmsService smsService, PushService pushService) {
+        this.emailService = EmailService.getInstance(); 
+        
         this.smsService = smsService;
         this.pushService = pushService;
     }
